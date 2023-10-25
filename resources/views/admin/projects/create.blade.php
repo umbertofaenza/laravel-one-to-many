@@ -30,11 +30,18 @@
             </div>
 
             <div class="col-6">
-                <label for="description">Description</label>
-                <textarea id="description" name="description" class="form-control"></textarea>
+                <label for="type_id" class="form-label">Type</label>
+                <select name="type_id" id="type_id" class="form-select">
+                    <option value="">No type</option>
+                    @foreach ($types as $type)
+                        <option value="{{ $type->id }}">{{ $type->name }}</option>
+                    @endforeach
+                </select>
             </div>
 
             <div class="col-6">
+                <label for="description">Description</label>
+                <textarea id="description" name="description" class="form-control"></textarea>
             </div>
 
             <div class="col">

@@ -27,6 +27,7 @@ class StoreProjectRequest extends FormRequest
             "name" => ["required", "string"],
             "description" => ["required", "string"],
             "link" => ["required", "string"],
+            "type_id" => ["nullable", "exists:types,id"],
         ];
     }
 }
