@@ -15,8 +15,8 @@
                 {{ $project->id }}
             </div>
             <div class="col-6">
-                <h4>Description:</h4>
-                {{ $project->description }}
+                <h4>Type:</h4>
+                {{ $project->type ? $project->type->name : 'No type.' }}
             </div>
             <div class="col-6">
                 <h4>Link:</h4>
@@ -25,6 +25,10 @@
             <div class="col-6">
                 <h4>Slug:</h4>
                 {{ $project->slug }}
+            </div>
+            <div class="col-12">
+                <h4>Description:</h4>
+                {{ $project->description }}
             </div>
         </div>
 
