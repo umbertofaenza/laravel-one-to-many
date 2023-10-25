@@ -1,12 +1,18 @@
 @extends('layouts.app')
 
+@section('css')
+    {{-- fontawesome --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+@endsection
 
 @section('content')
     <div class="container my-5">
 
         <a href="{{ route('admin.projects.create') }}" class="btn btn-outline-primary mb-3">Add project</a>
 
-        <table class="table">
+        <table class="table table-striped">
             <thead>
                 <tr>
                     <th scope="col">ID</th>
@@ -28,12 +34,17 @@
                         <td>{{ $project->link }}</td>
                         <td>{{ $project->slug }}</td>
                         <td>
-                            <a href="{{ route('admin.projects.show', $project) }}">Show</a>
+                            <a href="{{ route('admin.projects.show', $project) }}">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
 
-                            <a href="{{ route('admin.projects.edit', $project) }}">Edit</a>
+                            <a href="{{ route('admin.projects.edit', $project) }}">
+                                <i class="fa-solid fa-pen"></i>
+                            </a>
 
-                            <a href="#" data-bs-toggle="modal"
-                                data-bs-target="#deleteModal-{{ $project->id }}">Delete</a>
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#deleteModal-{{ $project->id }}">
+                                <i class="fa-solid fa-trash-can text-danger"></i>
+                            </a>
                         </td>
                     </tr>
                 @empty

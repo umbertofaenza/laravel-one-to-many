@@ -17,6 +17,9 @@
 
     <!-- Usando Vite -->
     @vite(['resources/js/app.js'])
+
+    {{-- CSS --}}
+    @yield('css')
 </head>
 
 <body>
